@@ -1,0 +1,27 @@
+#How to connect to an API using python
+
+import requests
+
+
+baseUrl = "https://pokeapi.co/api/v2/"
+
+def get_pokemon_info(name):
+    url = f"{baseUrl}/pokemon/{name}"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # print("Data retrived successfully")
+        pokemon_data = response.json()
+        return pokemon_data
+    else:
+        print(f"Failed to retrive data {response.status_code}")
+
+pokemon_name = input("Enter a pokemon name ")
+pokemon_info = get_pokemon_info(pokemon_name)
+
+if pokemon_info:
+    print(f"Name = {pokemon_info["name"]}")
+    print(f"Id = {pokemon_info["id"]}")
+    print(f"Height = {pokemon_info["height"]}")
+    print(f"Weight = {pokemon_info["weight"]}")
+
