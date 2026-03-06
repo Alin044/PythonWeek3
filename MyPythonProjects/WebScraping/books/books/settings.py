@@ -86,5 +86,8 @@ ITEM_PIPELINES = {
 # Set settings whose default value is deprecated to a future-proof value
 FEED_EXPORT_ENCODING = "utf-8"
 
+LOG_LEVEL = "DEBUG"
+LOG_FILE = "book_scraper.log"
+
 MONGO_URI = "mongodb://localhost:27017/"
 MONGO_DATABASE = "books_db"
